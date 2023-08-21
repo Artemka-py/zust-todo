@@ -5,7 +5,7 @@ import {Divider} from '../../components/shared-components/Divider'
 import styles from './index.module.css'
 import CheckboxInput from '../../components/CheckboxInput'
 
-const {container, todoItems, todoItem, todoText, inputTodo} = styles
+const {container, todoItems, todoItem, todoText, inputTodo} = styles //!
 
 interface TodoContainerProps {
   mainTitle: string
@@ -19,7 +19,7 @@ const TodoContainer: React.FC<TodoContainerProps> = ({mainTitle}) => {
     state.fetchTodos,
     state.isLoading,
     state.removeTodo
-  ])
+  ]) //!
 
   useEffect(() => {
     fetchTodos()
