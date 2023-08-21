@@ -18,22 +18,22 @@ interface TodosState {
  
 export const todoStore = create<TodosState>((set, get) => ({
     todos: [],
-    isLoading: true,
+    isLoading: true, //!
     addTodo: (title: string) => {
-        const {todos} = get()
+        const {todos} = get()//!
         const newTask = {
             id: Date.now(),
             title
-        }
-        if(title){
+        } //!
+        if(title){//!
             set({todos: [newTask].concat(todos)})
         }
     },
     fetchTodos: async (): Promise<any> => {
-        const result = await fetch('https://jsonplaceholder.typicode.com/todos')
-        const json = await result.json() as ITodo[];
-        set({todos: json})
-        set({isLoading: false})
+        const result = await fetch('https://jsonplaceholder.typicode.com/todos') //!
+        const json = await result.json() as ITodo[]; //!
+        set({todos: json}) //!
+        set({isLoading: false}) //!
     },
     removeTodo: (id: number) => {
         const {todos} = get()
